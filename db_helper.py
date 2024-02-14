@@ -17,7 +17,7 @@ class Task(Base):
 
 class DB_helper():
     def __init__(self):
-        self.sqlite_database = "sqlite:///player.db"
+        self.sqlite_database = "sqlite:///tasks.db"
         self.engine = create_engine(self.sqlite_database, echo=True)
 
     def create_tables(self):
