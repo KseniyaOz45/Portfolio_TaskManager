@@ -1,0 +1,792 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>555</width>
+    <height>930</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>555</width>
+    <height>930</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>555</width>
+    <height>930</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #111933;</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_3">
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="font">
+         <font>
+          <family>Book Antiqua</family>
+          <pointsize>18</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #087cc0;</string>
+        </property>
+        <property name="text">
+         <string>Actual tasks:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QListWidget" name="actual_tasks_list">
+        <property name="minimumSize">
+         <size>
+          <width>535</width>
+          <height>305</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>535</width>
+          <height>305</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Book Antiqua</family>
+          <pointsize>18</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QListWidget{
+	background-color: #087cc0;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+QListWidget::item{
+	color: rgb(255, 255, 255);
+	padding: 10px;
+	border: 1px solid #087cc0;
+	border-radius: 10px;
+}
+
+QListWidget::item:hover{
+	background-color: #0d4273;
+}
+
+QListWidget::item:selected{
+	background-color: #0d4273;
+}
+
+QScrollBar:vertical{
+	border: none;
+    background:#087cc0;
+    width: 14px;
+    margin: 15px 0 15px 0;
+	border-radius: 0px;
+}
+
+/*  HANDLE BAR VERTICAL */
+QScrollBar::handle:vertical {	
+	background-color: #0d5377;
+	min-height: 30px;
+}
+QScrollBar::handle:vertical:hover{	
+	background-color: rgb(235, 235, 235);
+}
+QScrollBar::handle:vertical:pressed {	
+	background-color: rgb(255, 255, 255);
+}
+
+/* BTN TOP - SCROLLBAR */
+QScrollBar::sub-line:vertical {
+	border: none;
+	background-color:#03d3f2;
+	height: 15px;
+	subcontrol-position: top;
+	subcontrol-origin: margin;
+}
+QScrollBar::sub-line:vertical:hover {	
+	background-color: rgb(235, 235, 235);
+}
+QScrollBar::sub-line:vertical:pressed {	
+	background-color: rgb(255, 255, 255);
+}
+
+/* BTN BOTTOM - SCROLLBAR */
+QScrollBar::add-line:vertical {
+	border: none;
+	background-color: #03d3f2;
+	height: 15px;
+	subcontrol-position: bottom;
+	subcontrol-origin: margin;
+}
+QScrollBar::add-line:vertical:hover {	
+	background-color: rgb(235, 235, 235);
+}
+QScrollBar::add-line:vertical:pressed {	
+	background-color: rgb(255, 255, 255);
+}
+
+/* RESET ARROW */
+QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {
+	background: none;
+}
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+	background: none;
+}
+
+
+
+
+
+
+</string>
+        </property>
+        <property name="verticalScrollBarPolicy">
+         <enum>Qt::ScrollBarAsNeeded</enum>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QPushButton" name="create_new_task_Btn">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>80</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+
+	border: 2px solid #087cc0;
+	color: #087cc0;
+	font: 75 14pt &quot;Book Antiqua&quot;;
+	border-radius: 10px;
+}
+
+QPushButton:hover{
+	background-color: rgb(25, 38, 76);
+}
+
+</string>
+        </property>
+        <property name="text">
+         <string>ADD</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="update_selected_task_Btn">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>80</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+
+	border: 2px solid #087cc0;
+	color: #087cc0;
+	font: 75 14pt &quot;Book Antiqua&quot;;
+	border-radius: 10px;
+}
+
+QPushButton:hover{
+	background-color: rgb(25, 38, 76);
+}
+
+</string>
+        </property>
+        <property name="text">
+         <string>UPD</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="delete_selected_task_Btn">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>80</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+
+	border: 2px solid #087cc0;
+	color: #087cc0;
+	font: 75 14pt &quot;Book Antiqua&quot;;
+	border-radius: 10px;
+}
+
+QPushButton:hover{
+	background-color: rgb(25, 38, 76);
+}
+
+</string>
+        </property>
+        <property name="text">
+         <string>DEL</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="delete_all_tasks_Btn">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>80</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+
+	border: 2px solid #087cc0;
+	color: #087cc0;
+	font: 75 14pt &quot;Book Antiqua&quot;;
+	border-radius: 10px;
+}
+
+QPushButton:hover{
+	background-color: rgb(25, 38, 76);
+}
+
+</string>
+        </property>
+        <property name="text">
+         <string>CLEAR</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="show_task_details_Btn">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>80</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+
+	border: 2px solid #087cc0;
+	color: #087cc0;
+	font: 75 14pt &quot;Book Antiqua&quot;;
+	border-radius: 10px;
+}
+
+QPushButton:hover{
+	background-color: rgb(25, 38, 76);
+}
+
+</string>
+        </property>
+        <property name="text">
+         <string>INFO</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="Line" name="line">
+      <property name="styleSheet">
+       <string notr="true">background-color: #087cc0;
+margin: 20px;</string>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="font">
+         <font>
+          <family>Book Antiqua</family>
+          <pointsize>18</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #087cc0;</string>
+        </property>
+        <property name="text">
+         <string>Completed tasks:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QListWidget" name="complete_tasks_list">
+        <property name="font">
+         <font>
+          <family>Book Antiqua</family>
+          <pointsize>18</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QListWidget{
+	background-color: #087cc0;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+QListWidget::item{
+	color: rgb(255, 255, 255);
+	padding: 10px;
+	border: 1px solid #087cc0;
+	border-radius: 10px;
+}
+
+QListWidget::item:hover{
+	background-color: #0d4273;
+}
+
+QListWidget::item:selected{
+	background-color: #0d4273;
+}
+
+QScrollBar:vertical{
+	border: none;
+    background:#087cc0;
+    width: 14px;
+    margin: 15px 0 15px 0;
+	border-radius: 0px;
+}
+
+/*  HANDLE BAR VERTICAL */
+QScrollBar::handle:vertical {	
+	background-color: #0d5377;
+	min-height: 30px;
+}
+QScrollBar::handle:vertical:hover{	
+	background-color: rgb(235, 235, 235);
+}
+QScrollBar::handle:vertical:pressed {	
+	background-color: rgb(255, 255, 255);
+}
+
+/* BTN TOP - SCROLLBAR */
+QScrollBar::sub-line:vertical {
+	border: none;
+	background-color:#03d3f2;
+	height: 15px;
+	subcontrol-position: top;
+	subcontrol-origin: margin;
+}
+QScrollBar::sub-line:vertical:hover {	
+	background-color: rgb(235, 235, 235);
+}
+QScrollBar::sub-line:vertical:pressed {	
+	background-color: rgb(255, 255, 255);
+}
+
+/* BTN BOTTOM - SCROLLBAR */
+QScrollBar::add-line:vertical {
+	border: none;
+	background-color: #03d3f2;
+	height: 15px;
+	subcontrol-position: bottom;
+	subcontrol-origin: margin;
+}
+QScrollBar::add-line:vertical:hover {	
+	background-color: rgb(235, 235, 235);
+}
+QScrollBar::add-line:vertical:pressed {	
+	background-color: rgb(255, 255, 255);
+}
+
+/* RESET ARROW */
+QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {
+	background: none;
+}
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+	background: none;
+}
+
+
+
+
+</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QPushButton" name="delete_selected_complete_task_Btn">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>80</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+
+	border: 2px solid #087cc0;
+	color: #087cc0;
+	font: 75 14pt &quot;Book Antiqua&quot;;
+	border-radius: 10px;
+}
+
+QPushButton:hover{
+	background-color: rgb(25, 38, 76);
+}
+
+</string>
+        </property>
+        <property name="text">
+         <string>DEL</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="delete_all_completed_tasks_Btn">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>80</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+
+	border: 2px solid #087cc0;
+	color: #087cc0;
+	font: 75 14pt &quot;Book Antiqua&quot;;
+	border-radius: 10px;
+}
+
+QPushButton:hover{
+	background-color: rgb(25, 38, 76);
+}
+
+</string>
+        </property>
+        <property name="text">
+         <string>CLEAR</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="show_completed_task_details_Btn">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>80</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+
+	border: 2px solid #087cc0;
+	color: #087cc0;
+	font: 75 14pt &quot;Book Antiqua&quot;;
+	border-radius: 10px;
+}
+
+QPushButton:hover{
+	background-color: rgb(25, 38, 76);
+}
+
+</string>
+        </property>
+        <property name="text">
+         <string>INFO</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>555</width>
+     <height>73</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Book Antiqua</family>
+     <pointsize>14</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QMenuBar{
+	padding: 10px;
+	margin: 10px;
+	background-color: #087cc0;
+	border:2px solid #087cc0;
+	border-radius: 5px;
+	color: rgb(255, 255, 255);
+}
+
+QMenuBar::item:selected{
+	background-color:#0d4273;
+}
+
+QMenu{
+	background-color: #0d4273;
+	color: rgb(255, 255, 255);
+}
+
+QMenu::item{
+	margin: 10px;
+}
+
+QMenu::item:selected{
+	background-color: #087cc0;
+}</string>
+   </property>
+   <widget class="QMenu" name="menuTASKS">
+    <property name="font">
+     <font>
+      <family>Book Antiqua</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="title">
+     <string>TASKS</string>
+    </property>
+    <addaction name="actionAdd_new"/>
+    <addaction name="actionUpdate_selected"/>
+    <addaction name="actionDelete_selected"/>
+    <addaction name="actionClear_all"/>
+    <addaction name="separator"/>
+    <addaction name="actionShow_details_of_selected"/>
+   </widget>
+   <widget class="QMenu" name="menuSELECTION">
+    <property name="font">
+     <font>
+      <family>Book Antiqua</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="title">
+     <string>SELECTION</string>
+    </property>
+    <addaction name="actionUnselect_all_actual_tasks"/>
+    <addaction name="actionUnselect_All_complete_tasks"/>
+   </widget>
+   <addaction name="menuTASKS"/>
+   <addaction name="menuSELECTION"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar">
+   <property name="font">
+    <font>
+     <family>Book Antiqua</family>
+     <pointsize>16</pointsize>
+     <weight>75</weight>
+     <italic>true</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QStatusBar{
+	color: #087cc0;
+}</string>
+   </property>
+  </widget>
+  <action name="actionAdd_new">
+   <property name="text">
+    <string>Add new</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Book Antiqua</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionUpdate_selected">
+   <property name="text">
+    <string>Update selected</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Book Antiqua</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionDelete_selected">
+   <property name="text">
+    <string>Delete selected</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Book Antiqua</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionClear_all">
+   <property name="text">
+    <string>Clear all</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Book Antiqua</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionUnselect_all_actual_tasks">
+   <property name="text">
+    <string>Unselect All Actual Tasks</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Book Antiqua</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionShow_details_of_selected">
+   <property name="text">
+    <string>Show details of selected</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Book Antiqua</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="action_2">
+   <property name="text">
+    <string>ТЕСТ</string>
+   </property>
+  </action>
+  <action name="actionUnselect_All_complete_tasks">
+   <property name="text">
+    <string>Unselect All Complete Tasks</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
