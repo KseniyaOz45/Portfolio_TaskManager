@@ -1,3 +1,5 @@
+import datetime
+
 from sqlalchemy import create_engine, Column, Integer, String, Date
 from sqlalchemy.orm import declarative_base, Session
 
@@ -43,6 +45,7 @@ class DB_helper():
                 db.commit()
             return 'Task successfully added!'
         except Exception as e:
+            print('Problem: ', e)
             return f'Problem: {e}'
 
     def update_checked_task(self, data):

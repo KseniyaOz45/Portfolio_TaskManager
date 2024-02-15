@@ -146,7 +146,6 @@ class Ui_MainWindow(object):
 "\n"
 "QListWidget::item{\n"
 "    color: rgb(255, 255, 255);\n"
-"    border: 1px solid #087cc0;\n"
 "    border-radius: 10px;\n"
 "}\n"
 "\n"
